@@ -20,14 +20,16 @@ public class YutScript : MonoBehaviour
 
     if(Input.GetKeyDown (KeyCode.Space)){
       rigid.velocity = Vector3.zero; 
-      rigid.angularVelocity = Vector3.zero; 
+      rigid.angularVelocity = Vector3.zero;
 
       float posX = Random.Range(-3, 3);
       float posZ = Random.Range(-3, 3);
       transform.position = new Vector3(posX, 3, posZ);
 
       //transform.rotation = Quaternion.identity;
-      rigid.AddForce(new Vector3(0,500,0)); // 위로 던지기
+      float forceY = Random.Range(200, 500);
+      float forceZ = Random.Range(0, 50);
+      rigid.AddForce(new Vector3(0, forceY, forceZ)); // 위로 던지기
       
       float dirX = Random.Range(300,700);
       // float dirY = Random.Range(200,500);

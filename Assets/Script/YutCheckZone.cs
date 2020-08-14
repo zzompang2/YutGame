@@ -9,10 +9,10 @@ public class YutCheckZone : MonoBehaviour
   public Text scoreText;
   public YutScript yut1, yut2, yut3, yut4;
   int[] yutResult = new int[4];
+  string[] resultText = new string[] { "모", "도", "개", "걸", "윷"};
   // Start is called before the first frame update
   void Start()
   {
-
   }
 
   // Update is called once per frame
@@ -42,7 +42,7 @@ public class YutCheckZone : MonoBehaviour
           yutResult[collider.gameObject.GetComponentInParent<YutScript>().yutId] = 0;
           break;
       }
-      scoreText.text = ""+yutResult[0]+yutResult[1]+yutResult[2]+yutResult[3];
+      scoreText.text = resultText[ yutResult[0] + yutResult[1] + yutResult[2] + yutResult[3] ];
     }
   }
 }
