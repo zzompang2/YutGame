@@ -11,6 +11,8 @@ public class YutScript : MonoBehaviour
   void Start()
   {
     // rigid = GetComponent<Rigidbody>();
+    transform.rotation = Quaternion.identity;
+    transform.Rotate(new Vector3(180, 90, 90));
   }
 
   // Update is called once per frame
@@ -22,19 +24,26 @@ public class YutScript : MonoBehaviour
       rigid.velocity = Vector3.zero; 
       rigid.angularVelocity = Vector3.zero;
 
-      float posX = Random.Range(-3, 3);
-      float posZ = Random.Range(-3, 3);
-      transform.position = new Vector3(posX, 3, posZ);
+      float posX = Random.Range(-2, 2);
+      float posZ = Random.Range(-2, 2);
+      float posY = Random.Range(3, 5);
+      transform.position = new Vector3(posX, posY, posZ);
 
-      //transform.rotation = Quaternion.identity;
+      // 각도
+      transform.rotation = Quaternion.identity;
+      float angY = Random.Range(70, 110); 
+      float angX = Random.Range(0, 360);
+      transform.Rotate(new Vector3(angX, angY, 90));
+
+      // 위로 던지기
       float forceY = Random.Range(200, 500);
-      float forceZ = Random.Range(0, 50);
-      rigid.AddForce(new Vector3(0, forceY, forceZ)); // 위로 던지기
+      rigid.AddForce(new Vector3(0, forceY, 0));
       
-      float dirX = Random.Range(300,700);
+      float dirX = Random.Range(5,50);
       // float dirY = Random.Range(200,500);
-      // float dirZ = Random.Range(200,500);
-      rigid.AddTorque(dirX, 10, 10);  // 각도 랜덤 설정 
+      float dirZ = Random.Range(-10, 10);
+      //rigid.AddTorque(0, 0, 500000);  // 각도 랜덤 설정
+      rigid.angularVelocity = new Vector3(dirX, 0, dirZ);
     }
   }
     
