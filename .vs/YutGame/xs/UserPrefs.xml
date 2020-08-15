@@ -1,12 +1,16 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/YutScript.cs">
+﻿<Properties StartupConfiguration="{48866BE8-464B-AF1F-13C1-A922242C777F}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/GameManager.cs">
     <Files>
-      <File FileName="Assets/Script/YutCheckZone.cs" Line="23" Column="4" />
-      <File FileName="Assets/Script/YutScript.cs" Line="24" Column="1" />
+      <File FileName="Assets/Script/YutCheckZone.cs" Line="17" Column="39" />
+      <File FileName="Assets/Script/YutScript.cs" Line="42" Column="37" />
+      <File FileName="Assets/Script/FollowThePath.cs" Line="14" Column="1" />
+      <File FileName="Assets/Script/GameManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-Editor PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bcb3bfd7-7e02-44ee-96df-61e98ffe7f18" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
