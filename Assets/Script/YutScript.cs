@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class YutScript : MonoBehaviour
 {
+  public Button button;
   private Rigidbody rigid;
   public int yutId; // 0,1,2,3
-  bool throwable;
+  public bool throwable;
 
   void Start()
   {
@@ -18,35 +20,37 @@ public class YutScript : MonoBehaviour
 
   void Update()
   {
-    if(Input.GetKeyDown (KeyCode.Space) && throwable)
-    {
-      // 연속 던지기 방지
-      throwable = false;
+    
+  }
 
-      // 속도 초기화
-      rigid.velocity = Vector3.zero;
-      rigid.angularVelocity = Vector3.zero; 
+  // inspector창에서 throwBtn/OnClick에 적용할 수 있도록 public으로 해준다.
+  public void throwYut()
+  {
+    //throwable = false;
 
-      // 위치 랜덤
-      float posX = Random.Range(-2, 2);
-      float posZ = Random.Range(-2, 2);
-      float posY = Random.Range(3, 5);
-      transform.position = new Vector3(posX, posY, posZ);
+    // 속도 초기화
+    rigid.velocity = Vector3.zero;
+    rigid.angularVelocity = Vector3.zero;
 
-      // 각도 랜덤
-      transform.rotation = Quaternion.identity;
-      float angY = Random.Range(70, 110); 
-      float angX = Random.Range(0, 360);
-      transform.Rotate(new Vector3(angX, angY, 90));
+    // 위치 랜덤
+    float posX = Random.Range(-2, 2);
+    float posZ = Random.Range(-2, 2);
+    float posY = Random.Range(3, 5);
+    transform.position = new Vector3(posX, posY, posZ);
 
-      // 위로 던지기
-      float forceY = Random.Range(200, 500);
-      rigid.AddForce(new Vector3(0, forceY, 0));
+    // 각도 랜덤
+    transform.rotation = Quaternion.identity;
+    float angY = Random.Range(70, 110);
+    float angX = Random.Range(0, 360);
+    transform.Rotate(new Vector3(angX, angY, 90));
 
-      // 회전 속도 추가
-      float dirX = Random.Range(5,50);
-      float dirZ = Random.Range(-10, 10);
-      rigid.angularVelocity = new Vector3(dirX, 0, dirZ);
-    }
+    // 위로 던지기
+    float forceY = Random.Range(200, 500);
+    rigid.AddForce(new Vector3(0, forceY, 0));
+
+    // 회전 속도 추가
+    float dirX = Random.Range(5, 50);
+    float dirZ = Random.Range(-10, 10);
+    rigid.angularVelocity = new Vector3(dirX, 0, dirZ);
   }
 }

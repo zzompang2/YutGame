@@ -11,35 +11,36 @@ using Debug = UnityEngine.Debug; // Diagnostics에 있는 Debug랑 충돌나서 
 public class YutCheckZone : MonoBehaviour
 {
   public Text scoreText;
+  public Button throwBtn;
 
   int[] yutResult = new int[4];           // 각 윷의 결과 저장
   int yutResultSum;                       // 각 윷 결과 합 (0-4)
   string[] resultText;                    // 결과별 명칭 배열
   int whosTurn = 1;                       // 차례 (A팀: 1, B팀: -1)
-  bool throwable;                         // 던질 수 있는 상황인가?
+  //bool throwable;                         // 던질 수 있는 상황인가?
   Stopwatch stopwatch = new Stopwatch();  // 진행 속도
   
   void Start()
   {
     ResetYut();
     resultText = new string[] { "모", "도", "개", "걸", "윷" };
-    throwable = true; 
+    //throwable = true; 
   }
 
   void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Space))
-    {
-      if (!GameManager.gameOver && throwable)
-      {
-        throwable = false;  // 중복 던지기 방지!
-        Time.timeScale = 3; // 윷 던지는 속도 3배속
-        ResetYut();
-        scoreText.text = "던졌다!";
-        stopwatch.Reset();
-        stopwatch.Start();
-      }
-    }
+    //if (Input.GetKeyDown(KeyCode.Space))
+    //{
+      //if (!GameManager.gameOver && throwable)
+      //{
+      //  throwable = false;  // 중복 던지기 방지!
+      //  Time.timeScale = 3; // 윷 던지는 속도 3배속
+      //  ResetYut();
+      //  scoreText.text = "던졌다!";
+      //  stopwatch.Reset();
+      //  stopwatch.Start();
+      //}
+    //}
   }
 
   int SumYutResult()
@@ -50,6 +51,14 @@ public class YutCheckZone : MonoBehaviour
   void ResetYut()
   { yutResult = new int[] { -4, -4, -4, -4 }; }
 
+  public void OnThrowYuts()
+  {
+    Time.timeScale = 3; // 윷 던지는 속도 3배속
+    ResetYut();
+    scoreText.text = "던졌다!";
+    stopwatch.Reset();
+    stopwatch.Start();
+  }
 
   private void OnTriggerStay(Collider collider) {
     if (stopwatch.ElapsedMilliseconds > 2000)
@@ -87,7 +96,8 @@ public class YutCheckZone : MonoBehaviour
       stopwatch.Reset();
       ResetYut();
       whosTurn *= -1;
-      throwable = true;
+      throwBtn.gameObject.SetActive(true);
+      //throwable = true;
     }
   }
 }
