@@ -1,15 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseManager : MonoBehaviour
 {
   public GameObject selectedObject;
-
-  void Start()
-  {
-        
-  }
 
   void Update()
   {

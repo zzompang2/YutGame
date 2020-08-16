@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using System.Diagnostics;
 using Debug = UnityEngine.Debug; // Diagnostics에 있는 Debug랑 충돌나서 이거 추가함
 
@@ -10,20 +9,15 @@ using Debug = UnityEngine.Debug; // Diagnostics에 있는 Debug랑 충돌나서 
  */
 public class YutCheckZone : MonoBehaviour
 {
-  public Text scoreText;
-  public Button throwBtn;
+  public static int remainedThrow = 1;    // 추가로 던질 기회
 
-  int[] yutResult = new int[4];           // 각 윷의 결과 저장
-  int yutResultSum;                       // 각 윷 결과 합 (0-4)
-  string[] yutResultText;                    // 결과별 명칭 배열
-  int whosTurn = 1;                       // 차례 (A팀: 1, B팀: -1)
+  int[]     yutResult = new int[4];           // 각 윷의 결과 저장
   Stopwatch stopwatch = new Stopwatch();  // 진행 속도
   
   void Start()
   {
     // 값 초기 세팅
     ResetYut();
-    yutResultText = new string[] {"도", "개", "걸", "윷", "모"};
     Time.timeScale = 3; // 윷 던지는 속도 3배속
   }
 
@@ -48,7 +42,6 @@ public class YutCheckZone : MonoBehaviour
   public void OnThrowYuts()
   {
     ResetYut();
-    scoreText.text = "던졌다!";
     //stopwatch.Reset();
     stopwatch.Start();
   }
@@ -83,7 +76,6 @@ public class YutCheckZone : MonoBehaviour
       //Time.timeScale = 1; // 정상속도로 돌아가기
       int sumYutResult = SumYutResult();
 
-      scoreText.text = yutResultText[sumYutResult-1]; // 결과 화면에 띄우기
       GameManager.yutResultList.Add(sumYutResult);  // 결과 리스트에 저장
       Debug.Log("Add: " + sumYutResult);
 
@@ -92,13 +84,14 @@ public class YutCheckZone : MonoBehaviour
       {
         stopwatch.Reset();
         ResetYut();
-        throwBtn.gameObject.SetActive(true);
+        GameManager.throwBtn.gameObject.SetActive(true);
       }
       // 윷 던지기 모두 끝난 경우
       else
       {
+        remainedThrow--;
         // 던지기 끝남을 알림
-        GameManager.isThrowStep = false;
+        // GameManager.isThrowStep = false;
 
         //if (whosTurn == 1)
         //{
@@ -112,10 +105,10 @@ public class YutCheckZone : MonoBehaviour
         //}
 
         //GameManager.yutResultList = new List<int>();
-        whosTurn *= -1;
+        //whosTurn *= -1;
         stopwatch.Reset();
         ResetYut();
-        throwBtn.gameObject.SetActive(true);
+        //GameManager.throwBtn.gameObject.SetActive(true);
       }
     }
   }

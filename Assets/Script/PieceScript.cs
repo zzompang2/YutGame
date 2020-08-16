@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
 
 public class PieceScript : MonoBehaviour
@@ -14,6 +14,8 @@ public class PieceScript : MonoBehaviour
   public int moveCount = -1;
 
   public bool moveAllowed = false;
+
+  public int teamNumber;
 
   void Start()
   {
@@ -30,6 +32,9 @@ public class PieceScript : MonoBehaviour
 
   public void Move(int yutResult)
   {
+    if(curWaypoint == 0)
+      transform.position = waypoints[0].transform.position;
+    
     moveAllowed = true;
     moveCount = yutResult;
   }

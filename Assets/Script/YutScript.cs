@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class YutScript : MonoBehaviour
 {
-  public Button button;
   private Rigidbody rigid;
   public int yutId; // 0,1,2,3
   public bool throwable;

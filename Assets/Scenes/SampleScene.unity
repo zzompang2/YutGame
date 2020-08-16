@@ -171,7 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd946ebd3ffa245b38844bc23a867a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
   yutId: 1
   throwable: 0
 --- !u!64 &27008759
@@ -1166,9 +1165,9 @@ GameObject:
   - component: {fileID: 30715629}
   - component: {fileID: 30715628}
   - component: {fileID: 30715627}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PieceA3
-  m_TagString: PieceA
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1182,7 +1181,7 @@ Transform:
   m_GameObject: {fileID: 30715625}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8, y: 0, z: -3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 745787876}
   m_RootOrder: 2
@@ -1199,10 +1198,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1b446b8e28a4fcc8ac7a8835d390ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 198165400}
+  - {fileID: 968655604}
+  - {fileID: 2124359965}
+  - {fileID: 1760240634}
+  - {fileID: 1855469724}
+  - {fileID: 1608274380}
+  - {fileID: 474900422}
+  - {fileID: 1971604786}
+  - {fileID: 1758873653}
+  - {fileID: 1613425766}
+  - {fileID: 2024629303}
+  - {fileID: 95698153}
+  - {fileID: 989424891}
+  - {fileID: 1005427821}
+  - {fileID: 1996400214}
+  - {fileID: 410730158}
+  - {fileID: 1692403472}
+  - {fileID: 322672775}
+  - {fileID: 951305612}
+  - {fileID: 1866553597}
   curWaypoint: 0
   moveCount: -1
   moveAllowed: 0
+  teamNumber: 1
 --- !u!65 &30715628
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1339,12 +1359,12 @@ RectTransform:
   m_Children:
   - {fileID: 1089397709}
   m_Father: {fileID: 123227035}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -20, y: 20}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 291.4978, y: 195.81897}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &91713581
 MonoBehaviour:
@@ -1516,7 +1536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95698152}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 3}
+  m_LocalPosition: {x: -5, y: 0.5, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -1658,7 +1678,6 @@ RectTransform:
   m_Children:
   - {fileID: 1041620695}
   - {fileID: 1148224090}
-  - {fileID: 631076195}
   - {fileID: 91713580}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1718,7 +1737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd946ebd3ffa245b38844bc23a867a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
   yutId: 2
   throwable: 0
 --- !u!64 &153471688
@@ -2833,7 +2851,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198165399}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: -5}
+  m_LocalPosition: {x: 5, y: 0.5, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -2933,6 +2951,11 @@ MonoBehaviour:
   - {fileID: 1104407796}
   - {fileID: 1425286212}
   - {fileID: 524034501}
+  resultText: {fileID: 1041620696}
+  whosTurnText: {fileID: 1148224091}
+  whichTeamturn: 1
+  selectedPiece: {fileID: 0}
+  selectedBlock: {fileID: 0}
 --- !u!4 &258010175
 Transform:
   m_ObjectHideFlags: 0
@@ -2961,9 +2984,9 @@ GameObject:
   - component: {fileID: 308517097}
   - component: {fileID: 308517096}
   - component: {fileID: 308517101}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PieceB1
-  m_TagString: PieceB
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3004,6 +3027,7 @@ MonoBehaviour:
   curWaypoint: 0
   moveCount: -1
   moveAllowed: 0
+  teamNumber: -1
 --- !u!65 &308517097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3073,7 +3097,7 @@ Transform:
   m_GameObject: {fileID: 308517095}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 745787876}
   m_RootOrder: 4
@@ -3094,6 +3118,7 @@ MonoBehaviour:
   curWaypoint: 0
   moveCount: -1
   moveAllowed: 0
+  teamNumber: 0
 --- !u!1 &322672774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3118,7 +3143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322672774}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: -5}
+  m_LocalPosition: {x: -1, y: 0.5, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -3137,9 +3162,9 @@ GameObject:
   - component: {fileID: 357467090}
   - component: {fileID: 357467089}
   - component: {fileID: 357467088}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PieceA1
-  m_TagString: PieceA
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3180,6 +3205,7 @@ MonoBehaviour:
   curWaypoint: 0
   moveCount: -1
   moveAllowed: 0
+  teamNumber: 1
 --- !u!65 &357467089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3249,7 +3275,7 @@ Transform:
   m_GameObject: {fileID: 357467087}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 745787876}
   m_RootOrder: 0
@@ -3496,7 +3522,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410730157}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: -5}
+  m_LocalPosition: {x: -5, y: 0.5, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -3515,9 +3541,9 @@ GameObject:
   - component: {fileID: 461368889}
   - component: {fileID: 461368888}
   - component: {fileID: 461368887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PieceB3
-  m_TagString: PieceB
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3531,7 +3557,7 @@ Transform:
   m_GameObject: {fileID: 461368885}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8, y: 0, z: -3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 745787876}
   m_RootOrder: 6
@@ -3548,10 +3574,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1b446b8e28a4fcc8ac7a8835d390ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 198165400}
+  - {fileID: 968655604}
+  - {fileID: 2124359965}
+  - {fileID: 1760240634}
+  - {fileID: 1855469724}
+  - {fileID: 1608274380}
+  - {fileID: 474900422}
+  - {fileID: 1971604786}
+  - {fileID: 1758873653}
+  - {fileID: 1613425766}
+  - {fileID: 2024629303}
+  - {fileID: 95698153}
+  - {fileID: 989424891}
+  - {fileID: 1005427821}
+  - {fileID: 1996400214}
+  - {fileID: 410730158}
+  - {fileID: 1692403472}
+  - {fileID: 322672775}
+  - {fileID: 951305612}
+  - {fileID: 1866553597}
   curWaypoint: 0
   moveCount: -1
   moveAllowed: 0
+  teamNumber: -1
 --- !u!65 &461368888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3636,7 +3683,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474900421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 5}
+  m_LocalPosition: {x: 3, y: 0.5, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -3889,8 +3936,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 1.7944975, z: 10}
-  m_Center: {x: 0, y: -0.90803504, z: 0}
+  m_Size: {x: 12, y: 3, z: 12}
+  m_Center: {x: 0, y: -1.5, z: 0}
 --- !u!114 &572789359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3903,8 +3950,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b17af9c4fdf43a985cf17acf7c25bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1041620696}
-  throwBtn: {fileID: 91713581}
 --- !u!4 &572789360
 Transform:
   m_ObjectHideFlags: 0
@@ -4071,84 +4116,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &631076194
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 631076195}
-  - component: {fileID: 631076197}
-  - component: {fileID: 631076196}
-  m_Layer: 5
-  m_Name: Player2MoveText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &631076195
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 631076194}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 123227035}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 546.2, y: 260.36}
-  m_SizeDelta: {x: 176.42505, y: 53.289124}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &631076196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 631076194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: move2
---- !u!222 &631076197
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 631076194}
-  m_CullTransparentMesh: 0
 --- !u!1 &673943551
 GameObject:
   m_ObjectHideFlags: 0
@@ -5012,9 +4979,9 @@ GameObject:
   - component: {fileID: 802494144}
   - component: {fileID: 802494143}
   - component: {fileID: 802494142}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PieceA4
-  m_TagString: PieceA
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5028,7 +4995,7 @@ Transform:
   m_GameObject: {fileID: 802494140}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8, y: 0, z: -4.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 745787876}
   m_RootOrder: 3
@@ -5045,10 +5012,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1b446b8e28a4fcc8ac7a8835d390ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 198165400}
+  - {fileID: 968655604}
+  - {fileID: 2124359965}
+  - {fileID: 1760240634}
+  - {fileID: 1855469724}
+  - {fileID: 1608274380}
+  - {fileID: 474900422}
+  - {fileID: 1971604786}
+  - {fileID: 1758873653}
+  - {fileID: 1613425766}
+  - {fileID: 2024629303}
+  - {fileID: 95698153}
+  - {fileID: 989424891}
+  - {fileID: 1005427821}
+  - {fileID: 1996400214}
+  - {fileID: 410730158}
+  - {fileID: 1692403472}
+  - {fileID: 322672775}
+  - {fileID: 951305612}
+  - {fileID: 1866553597}
   curWaypoint: 0
   moveCount: -1
   moveAllowed: 0
+  teamNumber: 1
 --- !u!65 &802494143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5275,9 +5263,9 @@ GameObject:
   - component: {fileID: 931183422}
   - component: {fileID: 931183421}
   - component: {fileID: 931183420}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PieceA2
-  m_TagString: PieceA
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5291,7 +5279,7 @@ Transform:
   m_GameObject: {fileID: 931183418}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8, y: 0, z: -1.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 745787876}
   m_RootOrder: 1
@@ -5308,10 +5296,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1b446b8e28a4fcc8ac7a8835d390ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 198165400}
+  - {fileID: 968655604}
+  - {fileID: 2124359965}
+  - {fileID: 1760240634}
+  - {fileID: 1855469724}
+  - {fileID: 1608274380}
+  - {fileID: 474900422}
+  - {fileID: 1971604786}
+  - {fileID: 1758873653}
+  - {fileID: 1613425766}
+  - {fileID: 2024629303}
+  - {fileID: 95698153}
+  - {fileID: 989424891}
+  - {fileID: 1005427821}
+  - {fileID: 1996400214}
+  - {fileID: 410730158}
+  - {fileID: 1692403472}
+  - {fileID: 322672775}
+  - {fileID: 951305612}
+  - {fileID: 1866553597}
   curWaypoint: 0
   moveCount: -1
   moveAllowed: 0
+  teamNumber: 1
 --- !u!65 &931183421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5396,7 +5405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951305611}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: -5}
+  m_LocalPosition: {x: 1, y: 0.5, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -5618,7 +5627,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968655603}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: -3}
+  m_LocalPosition: {x: 5, y: 0.5, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -5757,7 +5766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989424890}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 1}
+  m_LocalPosition: {x: -5, y: 0.5, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -5787,7 +5796,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005427820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: -1}
+  m_LocalPosition: {x: -5, y: 0.5, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -5948,7 +5957,7 @@ GameObject:
   - component: {fileID: 1041620697}
   - component: {fileID: 1041620696}
   m_Layer: 5
-  m_Name: scoreText
+  m_Name: resultText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5968,11 +5977,11 @@ RectTransform:
   m_Father: {fileID: 123227035}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -391, y: -218}
-  m_SizeDelta: {x: 447.37442, y: 91.870636}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 30, y: 30}
+  m_SizeDelta: {x: 524.4204, y: 204.2026}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1041620696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5994,18 +6003,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
-    m_MaxSize: 40
-    m_Alignment: 0
+    m_MaxSize: 60
+    m_Alignment: 6
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uACB0\uACFC: "
+  m_Text: result
 --- !u!222 &1041620697
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6116,10 +6125,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 4
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -6257,7 +6266,7 @@ GameObject:
   - component: {fileID: 1148224092}
   - component: {fileID: 1148224091}
   m_Layer: 5
-  m_Name: Player1MoveText
+  m_Name: whosTurnText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6277,11 +6286,11 @@ RectTransform:
   m_Father: {fileID: 123227035}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 370.7, y: 260.4}
-  m_SizeDelta: {x: 164.77893, y: 53.378296}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -30, y: -30}
+  m_SizeDelta: {x: 341.71387, y: 111.53522}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1148224091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6303,18 +6312,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
-    m_Alignment: 0
+    m_MaxSize: 60
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: move1
+  m_Text: whos turn?
 --- !u!222 &1148224092
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6373,7 +6382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd946ebd3ffa245b38844bc23a867a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
   yutId: 3
   throwable: 0
 --- !u!64 &1165370697
@@ -7477,9 +7485,9 @@ GameObject:
   - component: {fileID: 1254857044}
   - component: {fileID: 1254857043}
   - component: {fileID: 1254857042}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PieceB4
-  m_TagString: PieceB
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7493,7 +7501,7 @@ Transform:
   m_GameObject: {fileID: 1254857040}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8, y: 0, z: -4.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 745787876}
   m_RootOrder: 7
@@ -7510,10 +7518,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1b446b8e28a4fcc8ac7a8835d390ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 198165400}
+  - {fileID: 968655604}
+  - {fileID: 2124359965}
+  - {fileID: 1760240634}
+  - {fileID: 1855469724}
+  - {fileID: 1608274380}
+  - {fileID: 474900422}
+  - {fileID: 1971604786}
+  - {fileID: 1758873653}
+  - {fileID: 1613425766}
+  - {fileID: 2024629303}
+  - {fileID: 95698153}
+  - {fileID: 989424891}
+  - {fileID: 1005427821}
+  - {fileID: 1996400214}
+  - {fileID: 410730158}
+  - {fileID: 1692403472}
+  - {fileID: 322672775}
+  - {fileID: 951305612}
+  - {fileID: 1866553597}
   curWaypoint: 0
   moveCount: -1
   moveAllowed: 0
+  teamNumber: -1
 --- !u!65 &1254857043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8148,7 +8177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608274379}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 5}
+  m_LocalPosition: {x: 5, y: 0.5, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -8178,7 +8207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613425765}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 5}
+  m_LocalPosition: {x: -3, y: 0.5, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -8698,7 +8727,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692403471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: -5}
+  m_LocalPosition: {x: -3, y: 0.5, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -8847,7 +8876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd946ebd3ffa245b38844bc23a867a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
   yutId: 0
   throwable: 0
 --- !u!64 &1754163843
@@ -9978,7 +10006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758873652}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 5}
+  m_LocalPosition: {x: -1, y: 0.5, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -10008,7 +10036,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760240633}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 1}
+  m_LocalPosition: {x: 5, y: 0.5, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -10077,9 +10105,9 @@ GameObject:
   - component: {fileID: 1817713696}
   - component: {fileID: 1817713695}
   - component: {fileID: 1817713694}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PieceB2
-  m_TagString: PieceB
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10093,7 +10121,7 @@ Transform:
   m_GameObject: {fileID: 1817713692}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8, y: 0, z: -1.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 745787876}
   m_RootOrder: 5
@@ -10110,10 +10138,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1b446b8e28a4fcc8ac7a8835d390ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 198165400}
+  - {fileID: 968655604}
+  - {fileID: 2124359965}
+  - {fileID: 1760240634}
+  - {fileID: 1855469724}
+  - {fileID: 1608274380}
+  - {fileID: 474900422}
+  - {fileID: 1971604786}
+  - {fileID: 1758873653}
+  - {fileID: 1613425766}
+  - {fileID: 2024629303}
+  - {fileID: 95698153}
+  - {fileID: 989424891}
+  - {fileID: 1005427821}
+  - {fileID: 1996400214}
+  - {fileID: 410730158}
+  - {fileID: 1692403472}
+  - {fileID: 322672775}
+  - {fileID: 951305612}
+  - {fileID: 1866553597}
   curWaypoint: 0
   moveCount: -1
   moveAllowed: 0
+  teamNumber: -1
 --- !u!65 &1817713695
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10198,7 +10247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855469723}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 3}
+  m_LocalPosition: {x: 5, y: 0.5, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -10228,7 +10277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866553596}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: -5}
+  m_LocalPosition: {x: 3, y: 0.5, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -10258,7 +10307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971604785}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 5}
+  m_LocalPosition: {x: 1, y: 0.5, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -10288,7 +10337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996400213}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: -3}
+  m_LocalPosition: {x: -5, y: 0.5, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -10318,7 +10367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024629302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 5}
+  m_LocalPosition: {x: -5, y: 0.5, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
@@ -10680,7 +10729,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124359964}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: -1}
+  m_LocalPosition: {x: 5, y: 0.5, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738150728}
