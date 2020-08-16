@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+  public GameObject[] wayBlocks;
+
   private static GameObject player1MoveText, player2MoveText;
   private static GameObject pieceA1, pieceB1;
 
@@ -21,8 +23,8 @@ public class GameManager : MonoBehaviour
     player1MoveText = GameObject.Find("Player1MoveText");
     player2MoveText = GameObject.Find("Player2MoveText");
 
-    //pieceA1 = GameObject.Find("PieceA1");
-    //pieceB1 = GameObject.Find("PieceB1");
+    pieceA1 = GameObject.Find("PieceA1");
+    pieceB1 = GameObject.Find("PieceB1");
 
     //pieceA1.GetComponent<PieceMove1>().moveAllowed = false;
     //pieceB1.GetComponent<PieceMove1>().moveAllowed = false;
@@ -56,11 +58,13 @@ public class GameManager : MonoBehaviour
             targetPiece = null;
         }
 
+        // 선택된 piece가 있는 경우
         if (targetPiece != null)
         {
           Debug.Log("target is clicked!");
-          int curWaypoint = targetPiece.gameObject.GetComponent<PieceMove1>().curWaypoint;
+          int curWaypoint = targetPiece.gameObject.GetComponent<PieceScript>().curWaypoint;
           Debug.Log(curWaypoint);
+
         }
       }
     }
@@ -86,10 +90,10 @@ public class GameManager : MonoBehaviour
     switch (playerToMove)
     {
       case 1:
-        pieceA1.GetComponent<PieceMove1>().Move(yutResultList[0]);
+        pieceA1.GetComponent<PieceScript>().Move(yutResultList[0]);
         break;
       case 2:
-        pieceB1.GetComponent<PieceMove1>().Move(yutResultList[0]);
+        pieceB1.GetComponent<PieceScript>().Move(yutResultList[0]);
         break;
     }
   }
