@@ -18,11 +18,6 @@ public class YutScript : MonoBehaviour
     throwable = true;
   }
 
-  void Update()
-  {
-    
-  }
-
   // inspector창에서 throwBtn/OnClick에 적용할 수 있도록 public으로 해준다.
   public void throwYut()
   {

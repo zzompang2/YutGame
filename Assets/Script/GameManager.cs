@@ -5,9 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
   private static GameObject player1MoveText, player2MoveText;
-  private static GameObject player1, player2;
+  private static GameObject pieceA1, pieceB1;
 
-  public static int yutSideThrown = 0;
+  public static List<int> yutResultList = new List<int>();
   public static int player1StartWaypoint = 0;
   public static int player2StartWaypoint = 0;
 
@@ -18,11 +18,11 @@ public class GameManager : MonoBehaviour
     player1MoveText = GameObject.Find("Player1MoveText");
     player2MoveText = GameObject.Find("Player2MoveText");
 
-    player1 = GameObject.Find("Player1");
-    player2 = GameObject.Find("Player2");
+    pieceA1 = GameObject.Find("PieceA1");
+    pieceB1 = GameObject.Find("PieceB1");
 
-    player1.GetComponent<FollowThePath>().moveAllowed = false;
-    player2.GetComponent<FollowThePath>().moveAllowed = false;
+    pieceA1.GetComponent<PieceMove1>().moveAllowed = false;
+    pieceB1.GetComponent<PieceMove1>().moveAllowed = false;
 
     player1MoveText.gameObject.SetActive(true);
     player2MoveText.gameObject.SetActive(false);
@@ -31,32 +31,32 @@ public class GameManager : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    if(player1.GetComponent<FollowThePath>().waypointIndex > player1StartWaypoint + yutSideThrown)
+    if(pieceA1.GetComponent<PieceMove1>().curWaypoint > player1StartWaypoint + yutResultList[0])
     {
-      player1.GetComponent<FollowThePath>().moveAllowed = false;
+      //pieceA1.GetComponent<PieceMove1>().moveAllowed = false;
       player1MoveText.gameObject.SetActive(false);
       player2MoveText.gameObject.SetActive(true);
-      player1StartWaypoint = player1.GetComponent<FollowThePath>().waypointIndex - 1;
+      player1StartWaypoint = pieceA1.GetComponent<PieceMove1>().curWaypoint - 1;
     }
 
-    if (player2.GetComponent<FollowThePath>().waypointIndex > player2StartWaypoint + yutSideThrown)
+    if (pieceB1.GetComponent<PieceMove1>().curWaypoint > player2StartWaypoint + yutResultList[0])
     {
-      player2.GetComponent<FollowThePath>().moveAllowed = false;
+      //pieceB1.GetComponent<PieceMove1>().moveAllowed = false;
       player1MoveText.gameObject.SetActive(true);
       player2MoveText.gameObject.SetActive(false);
-      player2StartWaypoint = player2.GetComponent<FollowThePath>().waypointIndex - 1;
+      player2StartWaypoint = pieceB1.GetComponent<PieceMove1>().curWaypoint - 1;
     }
   }
 
-  public static void MovePlayer(int playerToMove)
+  public static void MovePiece(int playerToMove)
   {
     switch (playerToMove)
     {
       case 1:
-        player1.GetComponent<FollowThePath>().moveAllowed = true;
+        pieceA1.GetComponent<PieceMove1>().Move(yutResultList[0]);
         break;
       case 2:
-        player2.GetComponent<FollowThePath>().moveAllowed = true;
+        pieceB1.GetComponent<PieceMove1>().Move(yutResultList[0]);
         break;
     }
   }

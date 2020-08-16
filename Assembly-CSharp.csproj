@@ -63,9 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\FollowThePath.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
-    <Compile Include="Assets\Script\ThrowBtn.cs" />
+    <Compile Include="Assets\Script\PieceMove1.cs" />
+    <Compile Include="Assets\Script\PieceMoveManager.cs" />
     <Compile Include="Assets\Script\YutCheckZone.cs" />
     <Compile Include="Assets\Script\YutScript.cs" />
     <Reference Include="UnityEngine">

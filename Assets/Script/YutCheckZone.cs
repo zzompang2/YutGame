@@ -15,89 +15,105 @@ public class YutCheckZone : MonoBehaviour
 
   int[] yutResult = new int[4];           // 각 윷의 결과 저장
   int yutResultSum;                       // 각 윷 결과 합 (0-4)
-  string[] resultText;                    // 결과별 명칭 배열
+  string[] yutResultText;                    // 결과별 명칭 배열
   int whosTurn = 1;                       // 차례 (A팀: 1, B팀: -1)
-  //bool throwable;                         // 던질 수 있는 상황인가?
   Stopwatch stopwatch = new Stopwatch();  // 진행 속도
   
   void Start()
   {
+    // 값 초기 세팅
     ResetYut();
-    resultText = new string[] { "모", "도", "개", "걸", "윷" };
-    //throwable = true; 
+    yutResultText = new string[] {"도", "개", "걸", "윷", "모"};
+    Time.timeScale = 3; // 윷 던지는 속도 3배속
   }
 
-  void Update()
-  {
-    //if (Input.GetKeyDown(KeyCode.Space))
-    //{
-      //if (!GameManager.gameOver && throwable)
-      //{
-      //  throwable = false;  // 중복 던지기 방지!
-      //  Time.timeScale = 3; // 윷 던지는 속도 3배속
-      //  ResetYut();
-      //  scoreText.text = "던졌다!";
-      //  stopwatch.Reset();
-      //  stopwatch.Start();
-      //}
-    //}
-  }
-
+  /* 윷 결과 계산 
+   * 1:도 ... 4:윷 5:모
+   */
   int SumYutResult()
-  { return yutResult[0] + yutResult[1] + yutResult[2] + yutResult[3]; }
+  {
+    int result = yutResult[0] + yutResult[1] + yutResult[2] + yutResult[3];
+    return (result == 0 ? 5 : result);
+  }
 
-  // 하나라도 결과가 나오지 않을 때 음수가 되도록 -4 으로 잡음.
-  // 4개의 윷이 모두 결과가 나오면 ResetYut() >= 0
+  /* 윷 결과 리셋
+   * 하나라도 결과가 나오지 않을 때 음수(또는 0)가 되도록 -3 으로 잡음
+   */
   void ResetYut()
-  { yutResult = new int[] { -4, -4, -4, -4 }; }
+  { yutResult = new int[] { -3, -3, -3, -3 }; }
 
+  /* 윷 던지기
+   * 버튼이 눌렸을 때 실행.
+   */
   public void OnThrowYuts()
   {
-    Time.timeScale = 3; // 윷 던지는 속도 3배속
     ResetYut();
     scoreText.text = "던졌다!";
-    stopwatch.Reset();
+    //stopwatch.Reset();
     stopwatch.Start();
   }
 
-  private void OnTriggerStay(Collider collider) {
+  /* 윷을 던진 후 2초 뒤에 강제 계산
+   */
+  private void OnTriggerStay(Collider collider)
+  {
     if (stopwatch.ElapsedMilliseconds > 2000)
     {
       stopwatch.Stop();
 
-      switch (collider.gameObject.name){
-      case "Side_top":
-        yutResult[collider.gameObject.GetComponentInParent<YutScript>().yutId] = 1;
-          Debug.Log(collider.transform.rotation.x);
-        break;
-      case "Side_bottom":
-        yutResult[collider.gameObject.GetComponentInParent<YutScript>().yutId] = 0;
-          Debug.Log(collider.transform.rotation.x);
+      switch (collider.gameObject.name)
+      {
+        case "Side_top":
+          yutResult[collider.gameObject.GetComponentInParent<YutScript>().yutId] = 1;
+          //Debug.Log(collider.transform.rotation.x);
+          break;
+        case "Side_bottom":
+          yutResult[collider.gameObject.GetComponentInParent<YutScript>().yutId] = 0;
+          //Debug.Log(collider.transform.rotation.x);
           break;
       }
     }
+  }
 
-    if (SumYutResult() >= 0)
+  private void Update()
+  {
+    // 네 개의 윷 모두 결과가 나왔을 경우
+    if (SumYutResult() > 0)
     {
-      Time.timeScale = 1; // 정상속도로 돌아가기
-      scoreText.text = "" + yutResult[0] + yutResult[1] + yutResult[2] + yutResult[3];
+      //Time.timeScale = 1; // 정상속도로 돌아가기
+      int sumYutResult = SumYutResult();
 
-      GameManager.yutSideThrown = SumYutResult();
-      if (whosTurn == 1)
+      scoreText.text = yutResultText[sumYutResult-1]; // 결과 화면에 띄우기
+      GameManager.yutResultList.Add(sumYutResult);  // 결과 리스트에 저장
+      Debug.Log("Add: " + sumYutResult);
+
+      // 윷(4), 모(5)가 나왔을 경우 한 번 더
+      if (sumYutResult > 3)
       {
-        Debug.Log("whosTurn A");
-        GameManager.MovePlayer(1);
+        stopwatch.Reset();
+        ResetYut();
+        throwBtn.gameObject.SetActive(true);
       }
-      else if (whosTurn == -1)
+      // 윷 던지기 모두 끝난 경우
+      else
       {
-        Debug.Log("whosTurn B");
-        GameManager.MovePlayer(2);
+        if (whosTurn == 1)
+        {
+          Debug.Log("whosTurn A");
+          GameManager.MovePiece(1);
+        }
+        else if (whosTurn == -1)
+        {
+          Debug.Log("whosTurn B");
+          GameManager.MovePiece(2);
+        }
+
+        GameManager.yutResultList = new List<int>();
+        whosTurn *= -1;
+        stopwatch.Reset();
+        ResetYut();
+        throwBtn.gameObject.SetActive(true);
       }
-      stopwatch.Reset();
-      ResetYut();
-      whosTurn *= -1;
-      throwBtn.gameObject.SetActive(true);
-      //throwable = true;
     }
   }
 }
