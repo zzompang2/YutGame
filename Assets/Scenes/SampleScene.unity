@@ -2712,9 +2712,10 @@ GameObject:
   - component: {fileID: 173278189}
   - component: {fileID: 173278188}
   - component: {fileID: 173278187}
+  - component: {fileID: 173278190}
   m_Layer: 0
   m_Name: WayBlock15
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2794,6 +2795,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173278185}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &173278190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173278185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &198165399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3251,9 +3266,10 @@ GameObject:
   - component: {fileID: 367424173}
   - component: {fileID: 367424172}
   - component: {fileID: 367424171}
+  - component: {fileID: 367424174}
   m_Layer: 0
   m_Name: WayBlock16
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3333,6 +3349,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367424169}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &367424174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367424169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &375608049
 GameObject:
   m_ObjectHideFlags: 0
@@ -3345,9 +3375,10 @@ GameObject:
   - component: {fileID: 375608053}
   - component: {fileID: 375608052}
   - component: {fileID: 375608051}
+  - component: {fileID: 375608054}
   m_Layer: 0
   m_Name: WayBlock1
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3427,6 +3458,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375608049}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &375608054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375608049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &410730157
 GameObject:
   m_ObjectHideFlags: 0
@@ -3609,9 +3654,10 @@ GameObject:
   - component: {fileID: 524034505}
   - component: {fileID: 524034504}
   - component: {fileID: 524034503}
+  - component: {fileID: 524034506}
   m_Layer: 0
   m_Name: WayBlock19
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3691,6 +3737,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524034501}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &524034506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524034501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &554718443
 GameObject:
   m_ObjectHideFlags: 0
@@ -3703,9 +3763,10 @@ GameObject:
   - component: {fileID: 554718447}
   - component: {fileID: 554718446}
   - component: {fileID: 554718445}
+  - component: {fileID: 554718448}
   m_Layer: 0
   m_Name: WayBlock8
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3785,6 +3846,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554718443}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &554718448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554718443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &572789357
 GameObject:
   m_ObjectHideFlags: 0
@@ -5046,9 +5121,10 @@ GameObject:
   - component: {fileID: 826795736}
   - component: {fileID: 826795735}
   - component: {fileID: 826795734}
+  - component: {fileID: 826795737}
   m_Layer: 0
   m_Name: WayBlock7
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5128,6 +5204,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826795732}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &826795737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826795732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &928386449
 GameObject:
   m_ObjectHideFlags: 0
@@ -5407,9 +5497,10 @@ GameObject:
   - component: {fileID: 963918362}
   - component: {fileID: 963918361}
   - component: {fileID: 963918360}
+  - component: {fileID: 963918363}
   m_Layer: 0
   m_Name: WayBlock2
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5489,6 +5580,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963918358}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &963918363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963918358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &968655603
 GameObject:
   m_ObjectHideFlags: 0
@@ -5531,9 +5636,10 @@ GameObject:
   - component: {fileID: 981749085}
   - component: {fileID: 981749084}
   - component: {fileID: 981749083}
+  - component: {fileID: 981749086}
   m_Layer: 0
   m_Name: WayBlock4
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5613,6 +5719,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981749081}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &981749086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981749081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &989424890
 GameObject:
   m_ObjectHideFlags: 0
@@ -5685,9 +5805,10 @@ GameObject:
   - component: {fileID: 1027673335}
   - component: {fileID: 1027673334}
   - component: {fileID: 1027673333}
+  - component: {fileID: 1027673336}
   m_Layer: 0
   m_Name: WayBlock6
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5767,6 +5888,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027673331}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1027673336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027673331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &1028743321
 GameObject:
   m_ObjectHideFlags: 0
@@ -6013,9 +6148,10 @@ GameObject:
   - component: {fileID: 1104407800}
   - component: {fileID: 1104407799}
   - component: {fileID: 1104407798}
+  - component: {fileID: 1104407801}
   m_Layer: 0
   m_Name: WayBlock17
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6095,6 +6231,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104407796}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1104407801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104407796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &1148224089
 GameObject:
   m_ObjectHideFlags: 0
@@ -7217,9 +7367,10 @@ GameObject:
   - component: {fileID: 1187667939}
   - component: {fileID: 1187667938}
   - component: {fileID: 1187667937}
+  - component: {fileID: 1187667940}
   m_Layer: 0
   m_Name: WayBlock11
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7299,6 +7450,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187667935}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1187667940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187667935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &1254857040
 GameObject:
   m_ObjectHideFlags: 0
@@ -7422,9 +7587,10 @@ GameObject:
   - component: {fileID: 1284118269}
   - component: {fileID: 1284118268}
   - component: {fileID: 1284118272}
+  - component: {fileID: 1284118271}
   m_Layer: 0
   m_Name: WayBlock0
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7504,6 +7670,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284118266}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1284118271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284118266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!95 &1284118272
 Animator:
   serializedVersion: 3
@@ -7694,9 +7874,10 @@ GameObject:
   - component: {fileID: 1425286216}
   - component: {fileID: 1425286215}
   - component: {fileID: 1425286214}
+  - component: {fileID: 1425286217}
   m_Layer: 0
   m_Name: WayBlock18
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7776,6 +7957,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425286212}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1425286217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425286212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &1559621950
 GameObject:
   m_ObjectHideFlags: 0
@@ -7832,9 +8027,10 @@ GameObject:
   - component: {fileID: 1578613996}
   - component: {fileID: 1578613995}
   - component: {fileID: 1578613994}
+  - component: {fileID: 1578613997}
   m_Layer: 0
   m_Name: WayBlock3
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7914,6 +8110,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578613992}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1578613997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578613992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &1608274379
 GameObject:
   m_ObjectHideFlags: 0
@@ -7986,9 +8196,10 @@ GameObject:
   - component: {fileID: 1643005190}
   - component: {fileID: 1643005189}
   - component: {fileID: 1643005188}
+  - component: {fileID: 1643005191}
   m_Layer: 0
   m_Name: WayBlock14
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8068,6 +8279,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643005186}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1643005191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643005186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!43 &1660924598
 Mesh:
   m_ObjectHideFlags: 0
@@ -8243,9 +8468,10 @@ GameObject:
   - component: {fileID: 1681672679}
   - component: {fileID: 1681672678}
   - component: {fileID: 1681672677}
+  - component: {fileID: 1681672680}
   m_Layer: 0
   m_Name: WayBlock5
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8325,6 +8551,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681672675}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1681672680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681672675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &1691225120
 GameObject:
   m_ObjectHideFlags: 0
@@ -8337,9 +8577,10 @@ GameObject:
   - component: {fileID: 1691225124}
   - component: {fileID: 1691225123}
   - component: {fileID: 1691225122}
+  - component: {fileID: 1691225125}
   m_Layer: 0
   m_Name: WayBlock12
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8419,6 +8660,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691225120}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1691225125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691225120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &1692403471
 GameObject:
   m_ObjectHideFlags: 0
@@ -8461,9 +8716,10 @@ GameObject:
   - component: {fileID: 1746673865}
   - component: {fileID: 1746673864}
   - component: {fileID: 1746673863}
+  - component: {fileID: 1746673866}
   m_Layer: 0
   m_Name: WayBlock13
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8543,6 +8799,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746673861}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1746673866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746673861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &1754163841
 GameObject:
   m_ObjectHideFlags: 0
@@ -9587,9 +9857,10 @@ GameObject:
   - component: {fileID: 1754709655}
   - component: {fileID: 1754709654}
   - component: {fileID: 1754709653}
+  - component: {fileID: 1754709656}
   m_Layer: 0
   m_Name: WayBlock9
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9669,6 +9940,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754709651}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1754709656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754709651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &1758873652
 GameObject:
   m_ObjectHideFlags: 0
@@ -10144,9 +10429,10 @@ GameObject:
   - component: {fileID: 2043531045}
   - component: {fileID: 2043531044}
   - component: {fileID: 2043531043}
+  - component: {fileID: 2043531046}
   m_Layer: 0
   m_Name: WayBlock10
-  m_TagString: Untagged
+  m_TagString: WayBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10226,6 +10512,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043531041}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2043531046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043531041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe8d63a4b0543f7bc0d35a2cf6fe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  yutResult: 0
 --- !u!1 &2075840859
 GameObject:
   m_ObjectHideFlags: 0

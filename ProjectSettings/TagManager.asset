@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PieceA
   - PieceB
+  - WayBlock
   layers:
   - Default
   - TransparentFX
