@@ -97,16 +97,19 @@ public class YutCheckZone : MonoBehaviour
       // 윷 던지기 모두 끝난 경우
       else
       {
-        if (whosTurn == 1)
-        {
-          Debug.Log("whosTurn A");
-          GameManager.MovePiece(1);
-        }
-        else if (whosTurn == -1)
-        {
-          Debug.Log("whosTurn B");
-          GameManager.MovePiece(2);
-        }
+        // 던지기 끝남을 알림
+        GameManager.isThrowStep = false;
+
+        //if (whosTurn == 1)
+        //{
+        //  Debug.Log("whosTurn A");
+        //  GameManager.MovePiece(1);
+        //}
+        //else if (whosTurn == -1)
+        //{
+        //  Debug.Log("whosTurn B");
+        //  GameManager.MovePiece(2);
+        //}
 
         GameManager.yutResultList = new List<int>();
         whosTurn *= -1;

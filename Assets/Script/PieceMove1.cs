@@ -27,10 +27,8 @@ public class PieceMove1 : MonoBehaviour
     if (moveAllowed && moveCount >= 0)
       Move();
     else
-    {
       moveAllowed = false;
-    }
-      
+    
   }
 
   public void Move(int yutResult)
