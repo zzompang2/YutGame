@@ -15,13 +15,11 @@ public class PieceScript : MonoBehaviour
 
   public bool moveAllowed = false;
 
-  // Start is called before the first frame update
   void Start()
   {
     //transform.position = waypoints[curWaypoint].transform.position;
   }
 
-  // Update is called once per frame
   void Update()
   {
     if (moveAllowed && moveCount >= 0)

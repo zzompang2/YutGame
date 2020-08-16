@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{48866BE8-464B-AF1F-13C1-A922242C777F}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/BlockScript.cs">
     <Files>
       <File FileName="Assets/Script/YutScript.cs" Line="21" Column="32" />
-      <File FileName="Assets/Script/YutCheckZone.cs" Line="14" Column="26" />
-      <File FileName="Assets/Script/GameManager.cs" Line="66" Column="34" />
+      <File FileName="Assets/Script/YutCheckZone.cs" Line="114" Column="11" />
+      <File FileName="Assets/Script/GameManager.cs" Line="64" Column="68" />
       <File FileName="Assets/Script/PieceScript.cs" Line="33" Column="34" />
-      <File FileName="Assets/Script/MouseManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/MouseManager.cs" Line="7" Column="9" />
+      <File FileName="Assets/Script/BlockScript.cs" Line="7" Column="7" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +14,7 @@
           <Node name="YutGame" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Script" expanded="True">
-                <Node name="GameManager.cs" selected="True" />
+                <Node name="BlockScript.cs" selected="True" />
               </Node>
             </Node>
           </Node>

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
   public GameObject[] wayBlocks;
 
   private static GameObject player1MoveText, player2MoveText;
-  private static GameObject pieceA1, pieceB1;
+  //private static GameObject pieceA1, pieceB1;
 
   public static List<int> yutResultList = new List<int>();
   //public static int player1StartWaypoint = 0;
@@ -16,15 +16,16 @@ public class GameManager : MonoBehaviour
   public static bool isThrowStep = true;
   public static bool gameOver = false;
 
-  GameObject targetPiece;
+  GameObject selectedPiece;
+  GameObject selectedBlock;
 
   void Start()
   {
     player1MoveText = GameObject.Find("Player1MoveText");
     player2MoveText = GameObject.Find("Player2MoveText");
 
-    pieceA1 = GameObject.Find("PieceA1");
-    pieceB1 = GameObject.Find("PieceB1");
+    //pieceA1 = GameObject.Find("PieceA1");
+    //pieceB1 = GameObject.Find("PieceB1");
 
     //pieceA1.GetComponent<PieceMove1>().moveAllowed = false;
     //pieceB1.GetComponent<PieceMove1>().moveAllowed = false;
@@ -49,35 +50,53 @@ public class GameManager : MonoBehaviour
         // 마우스 근처에 오브젝트 있을 경우
         if (Physics.Raycast(ray.origin, ray.direction * 10, out raycast))
         {
-          if (raycast.collider.gameObject.gameObject.tag == "PieceA")
+          // [1] piece를 선택한 경우
+          if (raycast.collider.gameObject.tag == "PieceA")
           {
-            foreach (GameObject block in wayBlocks)
-              block.GetComponent<Renderer>().material.color = Color.gray;
-              
-            targetPiece = raycast.collider.gameObject;
-            Debug.Log("target piece: " + targetPiece.gameObject.name);
+            // 기존 칠해진 블럭들 초기화
+            ClearBlockColor();
+
+            selectedPiece = raycast.collider.gameObject;
+            Debug.Log("target piece: " + selectedPiece.gameObject.name);
           }
-           
+          // [2] block을 선택한 경우
+          else if(raycast.collider.gameObject.tag == "WayBlock")
+          {
+            selectedBlock = raycast.collider.gameObject;
+            if (selectedBlock.GetComponent<BlockScript>().isMovable)
+            {
+              Debug.Log("이동 가능한 블럭을 선택했습니다.");
+              MovePiece();
+              ClearBlockColor();
+              selectedPiece = null;
+              if (yutResultList.Count == 0)
+              {
+                isThrowStep = true;
+              }
+            }
+            else Debug.Log("이동 불가능한 블럭입니다.");
           }
+          // [3] piece/block 외의 것을 선택한 경우: 초기화
           else
-            targetPiece = null;
+            selectedPiece = null;
         }
 
         // 선택된 piece가 있는 경우, 이동 가능한 블럭 색칠하기
-        if (targetPiece != null)
+        if (selectedPiece != null)
         {
-          Debug.Log("target is clicked!");
-          int curWaypoint = targetPiece.gameObject.GetComponent<PieceScript>().curWaypoint;
-          Debug.Log("cur point: " + curWaypoint);
-          Debug.Log("result: " + yutResultList[0]);
+          //Debug.Log("target is clicked!");
+          int curWaypoint = selectedPiece.gameObject.GetComponent<PieceScript>().curWaypoint;
 
-          foreach(int result in yutResultList)
+          foreach (int result in yutResultList)
           {
             wayBlocks[curWaypoint + result].GetComponent<Renderer>().material.color = Color.green;
+            wayBlocks[curWaypoint + result].GetComponent<BlockScript>().isMovable = true;
+            wayBlocks[curWaypoint + result].GetComponent<BlockScript>().yutResult = result;
           }
         }
       }
     }
+  }
     //if(pieceA1.GetComponent<PieceMove1>().curWaypoint > player1StartWaypoint + yutResultList[0])
     //{
     //  //pieceA1.GetComponent<PieceMove1>().moveAllowed = false;
@@ -94,16 +113,20 @@ public class GameManager : MonoBehaviour
     //  player2StartWaypoint = pieceB1.GetComponent<PieceMove1>().curWaypoint - 1;
     //}
 
-  public static void MovePiece(int playerToMove)
+  void ClearBlockColor()
   {
-    switch (playerToMove)
+    foreach (GameObject block in wayBlocks)
     {
-      case 1:
-        pieceA1.GetComponent<PieceScript>().Move(yutResultList[0]);
-        break;
-      case 2:
-        pieceB1.GetComponent<PieceScript>().Move(yutResultList[0]);
-        break;
+      block.GetComponent<Renderer>().material.color = Color.gray;
+      block.GetComponent<BlockScript>().isMovable = false;
     }
+  }
+
+  public void MovePiece()
+  {
+    int yutResult = selectedBlock.GetComponent<BlockScript>().yutResult;
+    selectedPiece.GetComponent<PieceScript>().Move(yutResult);
+
+    yutResultList.Remove(yutResult); // Remove(): List<T>에서 처음 발견되는 특정 개체를 제거합니다.
   }
 }
