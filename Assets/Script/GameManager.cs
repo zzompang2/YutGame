@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-  private static GameObject whoWinsTextShadow, player1MoveText, player2MoveText;
+  private static GameObject player1MoveText, player2MoveText;
   private static GameObject player1, player2;
 
   public static int yutSideThrown = 0;
@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
 
   void Start()
   {
-    whoWinsTextShadow = GameObject.Find("WhoWinsText");
     player1MoveText = GameObject.Find("Player1MoveText");
     player2MoveText = GameObject.Find("Player2MoveText");
 
@@ -25,7 +24,6 @@ public class GameManager : MonoBehaviour
     player1.GetComponent<FollowThePath>().moveAllowed = false;
     player2.GetComponent<FollowThePath>().moveAllowed = false;
 
-    //whoWinsTextShadow.gameObject.SetActive(false);
     player1MoveText.gameObject.SetActive(true);
     player2MoveText.gameObject.SetActive(false);
   }
@@ -44,8 +42,8 @@ public class GameManager : MonoBehaviour
     if (player2.GetComponent<FollowThePath>().waypointIndex > player2StartWaypoint + yutSideThrown)
     {
       player2.GetComponent<FollowThePath>().moveAllowed = false;
-      player2MoveText.gameObject.SetActive(false);
       player1MoveText.gameObject.SetActive(true);
+      player2MoveText.gameObject.SetActive(false);
       player2StartWaypoint = player2.GetComponent<FollowThePath>().waypointIndex - 1;
     }
   }
