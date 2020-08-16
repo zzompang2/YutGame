@@ -51,20 +51,30 @@ public class GameManager : MonoBehaviour
         {
           if (raycast.collider.gameObject.gameObject.tag == "PieceA")
           {
+            foreach (GameObject block in wayBlocks)
+              block.GetComponent<Renderer>().material.color = Color.gray;
+              
             targetPiece = raycast.collider.gameObject;
-            Debug.Log(targetPiece.gameObject.name);
+            Debug.Log("target piece: " + targetPiece.gameObject.name);
+          }
+           
           }
           else
             targetPiece = null;
         }
 
-        // 선택된 piece가 있는 경우
+        // 선택된 piece가 있는 경우, 이동 가능한 블럭 색칠하기
         if (targetPiece != null)
         {
           Debug.Log("target is clicked!");
           int curWaypoint = targetPiece.gameObject.GetComponent<PieceScript>().curWaypoint;
-          Debug.Log(curWaypoint);
+          Debug.Log("cur point: " + curWaypoint);
+          Debug.Log("result: " + yutResultList[0]);
 
+          foreach(int result in yutResultList)
+          {
+            wayBlocks[curWaypoint + result].GetComponent<Renderer>().material.color = Color.green;
+          }
         }
       }
     }
@@ -83,7 +93,6 @@ public class GameManager : MonoBehaviour
     //  player2MoveText.gameObject.SetActive(false);
     //  player2StartWaypoint = pieceB1.GetComponent<PieceMove1>().curWaypoint - 1;
     //}
-  }
 
   public static void MovePiece(int playerToMove)
   {

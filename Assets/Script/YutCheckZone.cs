@@ -111,7 +111,7 @@ public class YutCheckZone : MonoBehaviour
         //  GameManager.MovePiece(2);
         //}
 
-        GameManager.yutResultList = new List<int>();
+        //GameManager.yutResultList = new List<int>();
         whosTurn *= -1;
         stopwatch.Reset();
         ResetYut();

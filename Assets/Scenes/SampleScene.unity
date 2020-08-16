@@ -1165,6 +1165,7 @@ GameObject:
   - component: {fileID: 30715630}
   - component: {fileID: 30715629}
   - component: {fileID: 30715628}
+  - component: {fileID: 30715627}
   m_Layer: 0
   m_Name: PieceA3
   m_TagString: PieceA
@@ -1186,6 +1187,22 @@ Transform:
   m_Father: {fileID: 745787876}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &30715627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30715625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1b446b8e28a4fcc8ac7a8835d390ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  curWaypoint: 0
+  moveCount: -1
+  moveAllowed: 0
 --- !u!65 &30715628
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2913,7 +2930,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &308517095
 GameObject:
@@ -2928,6 +2945,7 @@ GameObject:
   - component: {fileID: 308517098}
   - component: {fileID: 308517097}
   - component: {fileID: 308517096}
+  - component: {fileID: 308517101}
   m_Layer: 0
   m_Name: PieceB1
   m_TagString: PieceB
@@ -3045,6 +3063,22 @@ Transform:
   m_Father: {fileID: 745787876}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &308517101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308517095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1b446b8e28a4fcc8ac7a8835d390ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  curWaypoint: 0
+  moveCount: -1
+  moveAllowed: 0
 --- !u!1 &322672774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,6 +3469,7 @@ GameObject:
   - component: {fileID: 461368890}
   - component: {fileID: 461368889}
   - component: {fileID: 461368888}
+  - component: {fileID: 461368887}
   m_Layer: 0
   m_Name: PieceB3
   m_TagString: PieceB
@@ -3456,6 +3491,22 @@ Transform:
   m_Father: {fileID: 745787876}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &461368887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461368885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1b446b8e28a4fcc8ac7a8835d390ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  curWaypoint: 0
+  moveCount: -1
+  moveAllowed: 0
 --- !u!65 &461368888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4664,7 +4715,7 @@ Transform:
   - {fileID: 461368886}
   - {fileID: 1254857041}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &756075028
 Mesh:
@@ -4871,7 +4922,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &802494140
 GameObject:
@@ -4885,6 +4936,7 @@ GameObject:
   - component: {fileID: 802494145}
   - component: {fileID: 802494144}
   - component: {fileID: 802494143}
+  - component: {fileID: 802494142}
   m_Layer: 0
   m_Name: PieceA4
   m_TagString: PieceA
@@ -4906,6 +4958,22 @@ Transform:
   m_Father: {fileID: 745787876}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &802494142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802494140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1b446b8e28a4fcc8ac7a8835d390ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  curWaypoint: 0
+  moveCount: -1
+  moveAllowed: 0
 --- !u!65 &802494143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5116,6 +5184,7 @@ GameObject:
   - component: {fileID: 931183423}
   - component: {fileID: 931183422}
   - component: {fileID: 931183421}
+  - component: {fileID: 931183420}
   m_Layer: 0
   m_Name: PieceA2
   m_TagString: PieceA
@@ -5137,6 +5206,22 @@ Transform:
   m_Father: {fileID: 745787876}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &931183420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931183418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1b446b8e28a4fcc8ac7a8835d390ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  curWaypoint: 0
+  moveCount: -1
+  moveAllowed: 0
 --- !u!65 &931183421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7226,6 +7311,7 @@ GameObject:
   - component: {fileID: 1254857045}
   - component: {fileID: 1254857044}
   - component: {fileID: 1254857043}
+  - component: {fileID: 1254857042}
   m_Layer: 0
   m_Name: PieceB4
   m_TagString: PieceB
@@ -7247,6 +7333,22 @@ Transform:
   m_Father: {fileID: 745787876}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1254857042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254857040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1b446b8e28a4fcc8ac7a8835d390ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  curWaypoint: 0
+  moveCount: -1
+  moveAllowed: 0
 --- !u!65 &1254857043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9689,6 +9791,7 @@ GameObject:
   - component: {fileID: 1817713697}
   - component: {fileID: 1817713696}
   - component: {fileID: 1817713695}
+  - component: {fileID: 1817713694}
   m_Layer: 0
   m_Name: PieceB2
   m_TagString: PieceB
@@ -9710,6 +9813,22 @@ Transform:
   m_Father: {fileID: 745787876}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1817713694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817713692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1b446b8e28a4fcc8ac7a8835d390ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  curWaypoint: 0
+  moveCount: -1
+  moveAllowed: 0
 --- !u!65 &1817713695
 BoxCollider:
   m_ObjectHideFlags: 0
