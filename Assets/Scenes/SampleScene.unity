@@ -1221,8 +1221,8 @@ MonoBehaviour:
   - {fileID: 1866553597}
   curWaypoint: 0
   moveCount: -1
-  moveAllowed: 0
   teamNumber: 1
+  childPieces: []
 --- !u!65 &30715628
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3116,6 +3116,7 @@ MonoBehaviour:
   - {fileID: 1425286212}
   - {fileID: 524034501}
   resultText: {fileID: 1041620696}
+  isMoving2: 0
   selectedPiece: {fileID: 0}
   selectedBlock: {fileID: 0}
 --- !u!4 &258010175
@@ -3145,7 +3146,6 @@ GameObject:
   - component: {fileID: 308517098}
   - component: {fileID: 308517097}
   - component: {fileID: 308517096}
-  - component: {fileID: 308517101}
   m_Layer: 8
   m_Name: PieceB1
   m_TagString: Piece
@@ -3188,8 +3188,8 @@ MonoBehaviour:
   - {fileID: 1866553597}
   curWaypoint: 0
   moveCount: -1
-  moveAllowed: 0
   teamNumber: -1
+  childPieces: []
 --- !u!65 &308517097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3264,23 +3264,6 @@ Transform:
   m_Father: {fileID: 745787876}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &308517101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308517095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc1b446b8e28a4fcc8ac7a8835d390ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints: []
-  curWaypoint: 0
-  moveCount: -1
-  moveAllowed: 0
-  teamNumber: 0
 --- !u!1 &322672774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3366,8 +3349,8 @@ MonoBehaviour:
   - {fileID: 1866553597}
   curWaypoint: 0
   moveCount: -1
-  moveAllowed: 0
   teamNumber: 1
+  childPieces: []
 --- !u!65 &357467089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3761,8 +3744,8 @@ MonoBehaviour:
   - {fileID: 1866553597}
   curWaypoint: 0
   moveCount: -1
-  moveAllowed: 0
   teamNumber: -1
+  childPieces: []
 --- !u!65 &461368888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4102,8 +4085,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 2.5, z: 20}
-  m_Center: {x: 0, y: -1.5, z: 0}
+  m_Size: {x: 20, y: 2, z: 20}
+  m_Center: {x: 0, y: -1.4, z: 0}
 --- !u!114 &572789359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5038,8 +5021,8 @@ MonoBehaviour:
   - {fileID: 1866553597}
   curWaypoint: 0
   moveCount: -1
-  moveAllowed: 0
   teamNumber: 1
+  childPieces: []
 --- !u!65 &802494143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5323,8 +5306,8 @@ MonoBehaviour:
   - {fileID: 1866553597}
   curWaypoint: 0
   moveCount: -1
-  moveAllowed: 0
   teamNumber: 1
+  childPieces: []
 --- !u!65 &931183421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7550,8 +7533,8 @@ MonoBehaviour:
   - {fileID: 1866553597}
   curWaypoint: 0
   moveCount: -1
-  moveAllowed: 0
   teamNumber: -1
+  childPieces: []
 --- !u!65 &1254857043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10178,8 +10161,8 @@ MonoBehaviour:
   - {fileID: 1866553597}
   curWaypoint: 0
   moveCount: -1
-  moveAllowed: 0
   teamNumber: -1
+  childPieces: []
 --- !u!65 &1817713695
 BoxCollider:
   m_ObjectHideFlags: 0

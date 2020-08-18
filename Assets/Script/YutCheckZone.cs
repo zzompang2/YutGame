@@ -10,10 +10,11 @@ using Debug = UnityEngine.Debug; // Diagnostics에 있는 Debug랑 충돌나서 
 public class YutCheckZone : MonoBehaviour
 {
   public static int remainedThrow = 1;    // 추가로 던질 기회
+  bool isThrowing = false;
 
   int[]     yutResult = new int[4];           // 각 윷의 결과 저장
   Stopwatch stopwatch = new Stopwatch();  // 진행 속도
-  
+
   void Start()
   {
     // 값 초기 세팅
@@ -44,6 +45,7 @@ public class YutCheckZone : MonoBehaviour
     ResetYut();
     //stopwatch.Reset();
     stopwatch.Start();
+    isThrowing = true;
   }
 
   /* 윷을 던진 후 2초 뒤에 강제 계산
@@ -73,15 +75,26 @@ public class YutCheckZone : MonoBehaviour
     if (collider.gameObject.tag == "Yut")
     {
       Debug.Log("낙!");
-      GameManager.NextRound();
+      GameManager.NextTurn();
+      isThrowing = false;
     }
   }
 
   private void Update()
   {
+    if(!isThrowing && remainedThrow != 0 && !GameManager.isMoving)
+    {
+      GameManager.throwBtn.gameObject.SetActive(true);
+    }
+    else
+    {
+      GameManager.throwBtn.gameObject.SetActive(false);
+    }
+
     // 네 개의 윷 모두 결과가 나왔을 경우
     if (SumYutResult() > 0)
     {
+      isThrowing = false;
       //Time.timeScale = 1; // 정상속도로 돌아가기
       int sumYutResult = SumYutResult();
 
@@ -93,7 +106,7 @@ public class YutCheckZone : MonoBehaviour
       {
         stopwatch.Reset();
         ResetYut();
-        GameManager.throwBtn.gameObject.SetActive(true);
+        //GameManager.throwBtn.gameObject.SetActive(true);
       }
       // 윷 던지기 모두 끝난 경우
       else

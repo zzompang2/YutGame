@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
   //public static bool isThrowStep = true;
   public static bool gameOver = false;
 
+  public static bool isMoving;
+  public bool isMoving2;
+
   string[] yutResultText = new string[] { "도", "개", "걸", "윷", "모" };
 
   [SerializeField]
@@ -42,10 +45,14 @@ public class GameManager : MonoBehaviour
 
     whichTeamTurn = 1;
     whosTurnText.text = "RED팀";
+
+    isMoving = false;
   }
 
   void Update()
   {
+    isMoving2 = isMoving;
+
     if (Input.GetMouseButtonUp(0) && yutResultList.Count != 0)
     {
       // 충돌이 감지된 영역
@@ -90,7 +97,8 @@ public class GameManager : MonoBehaviour
             if (yutResultList.Count == 0 && YutCheckZone.remainedThrow == 0)
             {
               //isThrowStep = true;
-              NextRound();
+              Debug.Log("모든 행동 끝: " + yutResultList.Count + ", " + YutCheckZone.remainedThrow);
+              NextTurn();
             }
           }
           else Debug.Log("이동 불가능한 블럭입니다.");
@@ -172,22 +180,25 @@ public class GameManager : MonoBehaviour
       Debug.Log("상대팀 말 잡음!");
       whosOn.InitPosition();
       selectedBlock.GetComponent<BlockScript>().whosOn = selectedPiece.GetComponent<PieceScript>();
+      YutCheckZone.remainedThrow++; // 기회 +1
     }
     // block 위에 같은팀 말이 있는 경우
     else
     {
       Debug.Log("같은 팀 말 위에 업힘!");
+      whosOn.GetChild(selectedPiece);
     }
 
     yutResultList.Remove(yutResult); // Remove(): List<T>에서 처음 발견되는 특정 개체를 제거합니다.
     //SetResultText();
   }
 
-  public static void NextRound()
+  public static void NextTurn()
   {
+    //
     yutResultList = new List<int>();
     whichTeamTurn *= -1;
-    throwBtn.SetActive(true);
+    //throwBtn.SetActive(true);
     YutCheckZone.remainedThrow = 1;
     whosTurnText.text = (whichTeamTurn == 1 ? "RED팀" : "BLUE팀");
   }
