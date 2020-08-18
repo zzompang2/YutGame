@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
   public GameObject[] wayBlocks;
   public Text resultText;
-  public Text whosTurnText;
+  public static Text whosTurnText;
 
   public static GameObject throwBtn;
 
@@ -17,13 +17,13 @@ public class GameManager : MonoBehaviour
   //public static int player1StartWaypoint = 0;
   //public static int player2StartWaypoint = 0;
 
-  public static bool isThrowStep = true;
+  //public static bool isThrowStep = true;
   public static bool gameOver = false;
 
   string[] yutResultText = new string[] { "도", "개", "걸", "윷", "모" };
 
   [SerializeField]
-  int whichTeamturn;
+  static int whichTeamTurn;
   [SerializeField]
   GameObject selectedPiece;
   [SerializeField]
@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
   void Start()
   {
     throwBtn = GameObject.Find("ThrowBtn");
+    whosTurnText = GameObject.Find("whosTurnText").GetComponent<Text>();
 
     //pieceA1 = GameObject.Find("PieceA1");
     //pieceB1 = GameObject.Find("PieceB1");
@@ -39,13 +40,13 @@ public class GameManager : MonoBehaviour
     //pieceA1.GetComponent<PieceMove1>().moveAllowed = false;
     //pieceB1.GetComponent<PieceMove1>().moveAllowed = false;
 
-    whichTeamturn = 1;
+    whichTeamTurn = 1;
     whosTurnText.text = "RED팀";
   }
 
   void Update()
   {
-    if (Input.GetMouseButtonUp(0))
+    if (Input.GetMouseButtonUp(0) && yutResultList.Count != 0)
     {
       // 충돌이 감지된 영역
       RaycastHit raycast;
@@ -56,14 +57,17 @@ public class GameManager : MonoBehaviour
       if (Physics.Raycast(ray.origin, ray.direction * 10, out raycast))
       {
         // [1] piece를 선택한 경우
-        if (raycast.collider.gameObject.tag == "Piece" && raycast.collider.gameObject.GetComponent<PieceScript>().teamNumber == whichTeamturn)
+        if (raycast.collider.gameObject.tag == "Piece" && raycast.collider.gameObject.GetComponent<PieceScript>().teamNumber == whichTeamTurn)
         {
-          // 기존 칠해진 블럭들 초기화
+          // 기존 칠해진 블럭들과 말 초기화
           ClearBlockColor();
+          if (selectedPiece != null) selectedPiece.GetComponent<PieceScript>().CleanColor();
 
           // 만약 같은 말을 선택한 거라면 선택 취소
           if (selectedPiece == raycast.collider.gameObject)
+          {
             selectedPiece = null;
+          }
           else
           {
             selectedPiece = raycast.collider.gameObject;
@@ -79,27 +83,31 @@ public class GameManager : MonoBehaviour
             Debug.Log("이동 가능한 블럭을 선택했습니다.");
             MovePiece();
             ClearBlockColor();
+            selectedPiece.GetComponent<PieceScript>().CleanColor();
             selectedPiece = null;
 
+            // 모든 행동이 끝난 경우: 차례 넘기기
             if (yutResultList.Count == 0 && YutCheckZone.remainedThrow == 0)
             {
-              isThrowStep = true;
-              whichTeamturn *= -1;
-              throwBtn.SetActive(true);
-              YutCheckZone.remainedThrow = 1;
-              whosTurnText.text = (whichTeamturn == 1 ? "RED팀" : "BLUE팀");
+              //isThrowStep = true;
+              NextRound();
             }
           }
           else Debug.Log("이동 불가능한 블럭입니다.");
         }
         // [3] piece/block 외의 것을 선택한 경우: 초기화
         else
+        {
+          ClearBlockColor();
+          if (selectedPiece != null) selectedPiece.GetComponent<PieceScript>().CleanColor();
           selectedPiece = null;
+        }
       }
 
       // 선택된 piece가 있는 경우, 이동 가능한 블럭 색칠하기
       if (selectedPiece != null)
       {
+        selectedPiece.GetComponent<Renderer>().material.color = Color.cyan;
         //Debug.Log("target is clicked!");
         int curWaypoint = selectedPiece.gameObject.GetComponent<PieceScript>().curWaypoint;
 
@@ -149,9 +157,38 @@ public class GameManager : MonoBehaviour
   public void MovePiece()
   {
     int yutResult = selectedBlock.GetComponent<BlockScript>().yutResult;
+
+    wayBlocks[selectedPiece.GetComponent<PieceScript>().curWaypoint].GetComponent<BlockScript>().whosOn = null;
     selectedPiece.GetComponent<PieceScript>().Move(yutResult);
+
+    PieceScript whosOn = selectedBlock.GetComponent<BlockScript>().whosOn;
+
+    // block 위에 아무 말도 없는 경우
+    if (whosOn == null) 
+      selectedBlock.GetComponent<BlockScript>().whosOn = selectedPiece.GetComponent<PieceScript>();
+    // block 위에 상대팀 말이 있는 경우
+    else if (whosOn.teamNumber != whichTeamTurn)
+    {
+      Debug.Log("상대팀 말 잡음!");
+      whosOn.InitPosition();
+      selectedBlock.GetComponent<BlockScript>().whosOn = selectedPiece.GetComponent<PieceScript>();
+    }
+    // block 위에 같은팀 말이 있는 경우
+    else
+    {
+      Debug.Log("같은 팀 말 위에 업힘!");
+    }
 
     yutResultList.Remove(yutResult); // Remove(): List<T>에서 처음 발견되는 특정 개체를 제거합니다.
     //SetResultText();
+  }
+
+  public static void NextRound()
+  {
+    yutResultList = new List<int>();
+    whichTeamTurn *= -1;
+    throwBtn.SetActive(true);
+    YutCheckZone.remainedThrow = 1;
+    whosTurnText.text = (whichTeamTurn == 1 ? "RED팀" : "BLUE팀");
   }
 }

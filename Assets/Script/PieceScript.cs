@@ -17,9 +17,12 @@ public class PieceScript : MonoBehaviour
 
   public int teamNumber;
 
+  private Vector3 originPosition;
+
   void Start()
   {
     //transform.position = waypoints[curWaypoint].transform.position;
+    originPosition = transform.position;
   }
 
   void Update()
@@ -53,5 +56,21 @@ public class PieceScript : MonoBehaviour
       if (--moveCount >= 0)
         curWaypoint++;
     }
+  }
+
+  public void InitPosition()
+  {
+    transform.position = originPosition;
+    curWaypoint = 0;
+  }
+
+  public void Coloring()
+  {
+    GetComponent<Renderer>().material.color = Color.cyan;
+  }
+
+  public void CleanColor()
+  {
+    GetComponent<Renderer>().material.color = (teamNumber == 1 ? Color.red : Color.blue);
   }
 }

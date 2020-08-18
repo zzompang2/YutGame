@@ -68,6 +68,15 @@ public class YutCheckZone : MonoBehaviour
     }
   }
 
+  private void OnTriggerEnter(Collider collider)
+  {
+    if (collider.gameObject.tag == "Yut")
+    {
+      Debug.Log("낙!");
+      GameManager.NextRound();
+    }
+  }
+
   private void Update()
   {
     // 네 개의 윷 모두 결과가 나왔을 경우

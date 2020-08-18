@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Piece
   - WayBlock
+  - Yut
   layers:
   - Default
   - TransparentFX

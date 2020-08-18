@@ -6,4 +6,5 @@ public class BlockScript : MonoBehaviour
 {
   public bool isMovable = false;
   public int yutResult;
+  public PieceScript whosOn = null;
 }
