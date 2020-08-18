@@ -3,7 +3,7 @@
     <Files>
       <File FileName="Assets/Script/YutScript.cs" Line="2" Column="36" />
       <File FileName="Assets/Script/YutCheckZone.cs" />
-      <File FileName="Assets/Script/GameManager.cs" Line="160" Column="67" />
+      <File FileName="Assets/Script/GameManager.cs" />
       <File FileName="Assets/Script/PieceScript.cs" />
       <File FileName="Assets/Script/MouseManager.cs" />
       <File FileName="Assets/Script/BlockScript.cs" />
@@ -12,7 +12,7 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-Editor PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d936d430-d11c-4a9f-bcc8-d03cf7011d87" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e8a7dde8-d33f-44d8-a402-cb98e8a2b343" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
